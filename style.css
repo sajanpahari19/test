@@ -1,0 +1,617 @@
+```css
+/* =========================
+   BODY
+========================= */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #E8E5D5;
+    color: #333333;
+    line-height: 1.6;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background-color: #A3B18A;
+    padding: 20px;
+    box-shadow: 0 4px 10px #9BA88A;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.logo img {
+    border-radius: 10px;
+}
+
+/* Navigation */
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav a {
+    color: #344E41;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #FFFFFF;
+}
+
+/* Portfolio Heading */
+
+.container h1 {
+    color: #344E41;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+/* Search Form */
+
+.search-form {
+    display: flex;
+    gap: 5px;
+}
+
+.search-form input {
+    padding: 9px;
+    border: 1px solid #A3B18A;
+    border-radius: 5px;
+}
+
+.search-form button {
+    padding: 9px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #344E41;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form button:hover {
+    background-color: #588157;
+}
+
+/* =========================
+   COMMON SECTIONS
+========================= */
+
+#about,
+#skills,
+#project,
+#education,
+#message,
+#Connect,
+#photography {
+    background-color: #F5F5EB;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px #C5CBB9;
+    transition: 0.3s;
+}
+
+#about:hover,
+#skills:hover,
+#project:hover,
+#education:hover,
+#message:hover,
+#Connect:hover,
+#photography:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px #A3B18A;
+    background-color: #EEF0E5;
+}
+
+/* Section Headings */
+
+#about h1,
+#skills h2,
+#project h2,
+#education h2,
+#message h2,
+#Connect h3,
+#photography h2 {
+    color: #344E41;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* =========================
+   ABOUT ME
+========================= */
+
+#about {
+    text-align: center;
+}
+
+#about img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #A3B18A;
+    box-shadow: 0 4px 10px #C5CBB9;
+}
+
+#about p {
+    max-width: 750px;
+    margin: 15px auto 0;
+    text-align: justify;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+#skills {
+    text-align: center;
+}
+
+#skills dl {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 15px;
+    text-align: left;
+}
+
+#skills dt {
+    background-color: #DDE3D0;
+    color: #344E41;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+#skills dd {
+    background-color: #E8E5D5;
+    padding: 15px;
+    margin: 0;
+    border-radius: 8px;
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+#project article {
+    background-color: #E8E5D5;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    border-left: 5px solid #A3B18A;
+    box-shadow: 0 2px 8px #C5CBB9;
+    transition: transform 0.3s;
+}
+
+#project article:hover {
+    transform: translateY(-5px);
+    background-color: #DDE3D0;
+}
+
+#project article h3 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #344E41;
+}
+
+#project article p {
+    line-height: 1.6;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+#education {
+    overflow-x: auto;
+}
+
+#education table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    background-color: #F5F5EB;
+}
+
+#education th {
+    background-color: #588157;
+    color: white;
+    padding: 12px;
+    border: 1px solid #A3B18A;
+}
+
+#education td {
+    background-color: #E8E5D5;
+    padding: 12px;
+    border: 1px solid #C5CBB9;
+}
+
+#education tr:hover td {
+    background-color: #DDE3D0;
+}
+
+```css
+/* PHOTOGRAPHY SLIDER */
+
+#photography {
+    text-align: center;
+}
+
+#photography .connect {
+    width: 100%;
+}
+
+/* Main slider container */
+.slider-outer-container {
+    position: relative;
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #F5F5EB;
+    box-shadow: 0 4px 12px #C5CBB9;
+    box-sizing: border-box;
+}
+
+/* Images wrapper */
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.5s ease-in-out;
+    will-change: transform;
+}
+
+/* Each slide occupies exactly one slider width */
+.slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* Keep images inside their slides */
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Navigation arrows */
+.slider-btn {
+    position: absolute;
+    top: calc((100% - 48px) / 2);
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(52, 78, 65, 0.85);
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider-btn:hover {
+    background-color: #588157;
+}
+
+.slider-btn.prev {
+    left: 12px;
+}
+
+.slider-btn.next {
+    right: 12px;
+}
+
+/* Dots below the images */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    box-sizing: border-box;
+    background-color: #F5F5EB;
+}
+
+.dot {
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: #C5CBB9;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.dot:hover {
+    background-color: #588157;
+}
+
+.dot.active {
+    background-color: #344E41;
+    transform: scale(1.2);
+}
+
+/* Mobile screens */
+@media (max-width: 768px) {
+    .slide {
+        height: 280px;
+    }
+
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .slider-btn.prev {
+        left: 8px;
+    }
+
+    .slider-btn.next {
+        right: 8px;
+    }
+}
+
+
+#message label {
+    font-weight: bold;
+    color: #344E41;
+}
+
+#message input,
+#message textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #A3B18A;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background-color: #F5F5EB;
+    font-family: Arial, sans-serif;
+}
+
+#message textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#message input:focus,
+#message textarea:focus {
+    outline: 2px solid #A3B18A;
+}
+
+#message button {
+    background-color: #344E41;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#message button:hover {
+    background-color: #588157;
+}
+
+/* =========================
+   SOCIAL MEDIA
+========================= */
+
+#Connect {
+    text-align: center;
+}
+
+#Connect a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#Connect img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 3px 8px #C5CBB9;
+    transition: 0.3s;
+}
+
+#Connect img:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background-color: #344E41;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 20px;
+    box-shadow: 0 -4px 10px #A3B18A;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    header {
+        text-align: center;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .search-form {
+        justify-content: center;
+    }
+
+    #about,
+    #skills,
+    #project,
+    #education,
+    #message,
+    #Connect,
+    #photography {
+        margin: 15px 10px;
+        padding: 20px;
+    }
+
+    #skills dl {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    #education table {
+        min-width: 600px;
+    }
+
+    .slide {
+        height: 280px;
+    }
+
+    .slider-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+
+    .slider-btn.prev {
+        left: 8px;
+    }
+
+    .slider-btn.next {
+        right: 8px;
+    }
+}
+/* =========================
+   PHOTOGRAPHY SLIDER STYLING
+========================= */
+
+#portfolioSlider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.slider-wrapper {
+    display: flex;
+    width: 100%;
+    overflow: hidden; /* Hides the images that are not currently active */
+    border-radius: 8px;
+    scroll-behavior: smooth;
+    transition: transform 0.4s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    width: 100%;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Next and Previous Buttons */
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(52, 78, 65, 0.7);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+    background-color: #344E41;
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+/* Slider Pagination Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background-color: #A3B18A;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots .dot.active {
+    background-color: #344E41;
+}
